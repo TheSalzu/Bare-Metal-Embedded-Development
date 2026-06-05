@@ -19,8 +19,8 @@
 void changeDirection(uint8_t dir1, uint8_t dir2);
 void initPWMTimer();
 void initRampTimer();
-// void initADC();
-// uint16_t readADC();
+void initADC();
+uint16_t readADC();
 
 // Global Variables
 volatile uint8_t targetSpeed = 0;
