@@ -2,7 +2,7 @@
 
 void initSPI() {
   SPCR |= (1 << MSTR); // AVR is the master
-  SPCR |= (1 << SPR0); // 4 prescaler
+  // SPCR |= (1 << SPR0) | (1 << SPR1); // 4 prescaler
   SPCR |= (1 << SPE); // Enable SPI
 }
 
