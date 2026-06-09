@@ -1,5 +1,11 @@
 #include "SPI.h"
 
+void initSPI() {
+  SPCR |= (1 << MSTR); // AVR is the master
+  SPCR |= (1 << SPR0); // 4 prescaler
+  SPCR |= (1 << SPE); // Enable SPI
+}
+
 void SPI_transmit(uint8_t data) {
   SPDR = data;
   while (!(SPSR & (1 << SPIF))); // wait until transmission is complete

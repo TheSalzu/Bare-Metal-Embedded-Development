@@ -54,16 +54,18 @@ typedef struct {
   uint8_t minutes;
   uint8_t hour;
   uint8_t dayOfWeek;
+  uint8_t date;
   uint8_t month;
   uint8_t year;
   uint8_t isPM;
 } RTCTime;
 
-// Public Function Prototypes
+// Initalizations
 void initRTC(void);
 void initRTC_SQWE_MODE(HZMode mode);
 void initRTC_OUT_MODE(void);
 
+// Setters
 void writeOutHigh(void);
 void writeOutLow(void);
 void setHourMode(HourMode mode);

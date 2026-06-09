@@ -122,6 +122,7 @@ RTCTime getTimeValues(HourMode mode) {
   timeValues.seconds = bcdToDec(rawSeconds & 0x7F);
   timeValues.minutes = bcdToDec(rawMinutes);
   timeValues.dayOfWeek = bcdToDec(rawDayOfWeek & 0x07);
+  timeValues.date = bcdToDec(rawDate & 0x3F);
   timeValues.month = bcdToDec(rawMonth & 0x1F);
   timeValues.year = bcdToDec(rawYear) + YEAR_OFFSET;
 
