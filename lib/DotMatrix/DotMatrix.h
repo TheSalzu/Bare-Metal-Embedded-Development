@@ -11,6 +11,8 @@
 
 #define NORMAL_OPERATION_MODE    0x00
 #define MATRIX_MODE              0x00
+#define ALL_DIGITS               0x00
+#define LOWEST_BRIGHTNESS_MODE    0x00
 
 #define DECODE_MODE_REGISTER     0x09
 #define INTENSITY_REGISTER       0x0A

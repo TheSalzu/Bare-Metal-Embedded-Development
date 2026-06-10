@@ -45,9 +45,9 @@ void max7219DisplayNumber(uint8_t number) {
 
 void initMax7219() {
   spiTransmitMax7219(DISPLAY_TEST_REGISTER, NORMAL_OPERATION_MODE); // Also enables the device
-  spiTransmitMax7219(SCAN_LIMIT_REGISTER, 0x07); // We want all the digits
+  spiTransmitMax7219(SCAN_LIMIT_REGISTER, ALL_DIGITS); // We want all the digits
   spiTransmitMax7219(DECODE_MODE_REGISTER, MATRIX_MODE); // Only use matrix mode on the dot matrix since I don't have seven connected
-  spiTransmitMax7219(INTENSITY_REGISTER, 0x00); // Brightness
+  spiTransmitMax7219(INTENSITY_REGISTER, LOWEST_BRIGHTNESS_MODE); // Brightness
   spiTransmitMax7219(SHUTDOWN_REGISTER, 0x01); // Enables the device
 
   max7219ClearDisplay();
