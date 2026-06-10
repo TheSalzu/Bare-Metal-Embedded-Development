@@ -112,7 +112,7 @@ ISR(INT0_vect) {
     state = WAITING_FOR_ECHO;
   } else {
     // Trigger has ended
-    state = ECHO_RECEIVED;
     travelTime = TCNT1 - triggerStartTime;
+    state = ECHO_RECEIVED;
   }
 }
