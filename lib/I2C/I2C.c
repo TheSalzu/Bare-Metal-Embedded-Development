@@ -49,11 +49,11 @@ uint8_t i2cReadNoAck(void) {
 uint8_t readRegister(uint8_t deviceAddress, uint8_t registerAddress) {
   i2cStart();
   i2cSend(deviceAddress << 1); // Write mode
-  i2cSend(registerAddress);
+  i2cSend(registerAddress); // Write to the address we're talking to
 
-  i2cStart();
+  i2cStart(); // Start again in read mode
   i2cSend((deviceAddress << 1) | 1); // Tell i2c we're reading this time
-  uint8_t data = i2cReadNoAck();
+  uint8_t data = i2cReadNoAck(); // Read data and stop
   i2cStop();
 
   return data;
@@ -61,8 +61,8 @@ uint8_t readRegister(uint8_t deviceAddress, uint8_t registerAddress) {
 
 void writeRegister(uint8_t deviceAddress, uint8_t registerAddress, uint8_t data) {
   i2cStart();
-  i2cSend(deviceAddress << 1);
-  i2cSend(registerAddress);
-  i2cSend(data);
+  i2cSend(deviceAddress << 1); // Write mode
+  i2cSend(registerAddress); // Write to the address we're talking to
+  i2cSend(data);// Send Data
   i2cStop();
 }

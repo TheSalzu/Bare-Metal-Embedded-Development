@@ -1,8 +1,6 @@
 #ifndef DOT_MATRIX_H
 #define DOT_MATRIX_H
 
-#define SCK PB5
-#define MOSI PB3
 #define SS PB2
 
 #include <avr/pgmspace.h>
